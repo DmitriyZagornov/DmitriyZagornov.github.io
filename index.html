@@ -111,7 +111,7 @@
         }
         .author-avatar {
             width: 50px; height: 50px; border-radius: 50%; background-color: #ccc;
-            background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'); /* Временное фото */
+            background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'); /* Временное фото. Замените на реальное фото Юли */
             background-size: cover; background-position: center; flex-shrink: 0;
         }
         .author-info { text-align: left; }
@@ -169,11 +169,15 @@
         .review-text { font-size: 15px; color: #444; font-style: italic; margin-bottom: 10px; }
         .review-author { font-size: 14px; font-weight: bold; color: #006b5b; }
 
-        /* ---------- SEO Текст и FAQ ---------- */
-        .seo-text { text-align: left; margin-bottom: 40px; background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-size: 15px; line-height: 1.8; color: #444; }
-        .seo-text h2 { color: #006b5b; font-size: 22px; margin-bottom: 15px; }
+        /* ---------- SEO Статья ---------- */
+        .seo-text { text-align: left; margin-bottom: 40px; background: #fff; padding: 35px 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-size: 16px; line-height: 1.8; color: #444; }
+        .seo-text h2 { color: #006b5b; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #e6f7f4; padding-bottom: 10px; }
+        .seo-text h3 { color: #008f7a; font-size: 19px; margin-top: 25px; margin-bottom: 12px; }
         .seo-text p { margin-bottom: 15px; }
+        .seo-text ul { margin-left: 20px; margin-bottom: 20px; }
+        .seo-text li { margin-bottom: 8px; }
 
+        /* ---------- FAQ ---------- */
         .faq-section { text-align: left; margin-bottom: 40px; background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .faq-section h2 { color: #006b5b; font-size: 22px; margin-bottom: 20px; text-align: center; }
         .faq-item { border-bottom: 1px solid #eee; padding: 15px 0; }
@@ -181,7 +185,7 @@
         .faq-question { font-weight: bold; font-size: 16px; color: #333; margin-bottom: 8px; }
         .faq-answer { font-size: 15px; color: #555; line-height: 1.6; }
 
-        /* ---------- Прайс и Реквизиты ---------- */
+        /* ---------- Прайс ---------- */
         .price-section { margin-top: 40px; border-top: 2px dashed #ddd; padding-top: 30px; }
         .price-section h3 { color: #006b5b; margin-bottom: 25px; font-size: 24px; }
         .table-wrap { overflow-x: auto; }
@@ -208,9 +212,12 @@
             .btn-main, .btn-call { font-size: 16px; padding: 14px; }
             .docs-grid { gap: 8px; }
             .doc-item { font-size: 14px; padding: 8px 16px; }
-            .seo-text, .faq-section, .reviews-section, .steps-section, .calc-section { padding: 15px; }
+            .seo-text, .faq-section, .reviews-section, .steps-section, .calc-section { padding: 20px 15px; }
+            .seo-text h2 { font-size: 20px; }
+            .seo-text h3 { font-size: 17px; }
             .guarantees { flex-direction: column; gap: 10px; }
             .mobile-fixed-bar { display: flex; }
+            
             .price-table, .price-table thead, .price-table tbody, .price-table th, .price-table td, .price-table tr { display: block; }
             .price-table thead tr { position: absolute; top: -9999px; left: -9999px; }
             .price-table tr { border: 1px solid #ccc; margin-bottom: 10px; border-radius: 8px; background: #fff; }
@@ -234,7 +241,6 @@
         <div class="notary-content">
             <!-- Блок автора -->
             <div class="author-block">
-                <!-- Замените URL картинки ниже на реальное фото Юли, если оно есть -->
                 <div class="author-avatar"></div>
                 <div class="author-info">
                     <div class="author-name">Юлия</div>
@@ -345,10 +351,33 @@
                 </div>
             </div>
 
+            <!-- Большая SEO Статья -->
             <div class="seo-text">
-                <h2>Профессиональный перевод с заверением нотариуса</h2>
-                <p>Нужен срочный нотариальный перевод документов в Санкт-Петербурге? Я выполняю письменный перевод с любого языка (английский, немецкий, китайский, французский и др.) и заверяю его у нотариуса. Работаю с физическими и юридическими лицами.</p>
-                <p>Перевожу паспорта, дипломы (с приложением), свидетельства о рождении и браке, водительские права, трудовые книжки, справки, банковские выписки и уставы. Принимаю сканы и фотографии документов онлайн, что позволяет сэкономить ваше время. Готовый перевод можно забрать лично или получить в электронном виде.</p>
+                <h2>Полезная информация о нотариальном переводе документов</h2>
+                
+                <h3>Зачем нужен нотариальный перевод?</h3>
+                <p>Нотариальный перевод — это не просто дословный перенос текста с одного языка на другой. Это юридическая процедура, которая подтверждает, что перевод выполнен верно, а подпись переводчика заверена нотариусом. Такой перевод требуется для предоставления документов в государственные органы, посольства, банки и учебные заведения за рубежом.</p>
+                
+                <h3>Какие документы чаще всего переводят в СПб?</h3>
+                <p>В моей практике наиболее частыми запросами являются:</p>
+                <ul>
+                    <li><strong>Личные документы:</strong> паспорт (внутренний и заграничный), свидетельство о рождении, свидетельство о браке (или разводе), водительское удостоверение.</li>
+                    <li><strong>Образовательные документы:</strong> диплом о высшем образовании (с приложением с оценками), школьный аттестат, сертификаты о прохождении курсов.</li>
+                    <li><strong>Финансовые и трудовые документы:</strong> трудовая книжка, справки о доходах (2-НДФЛ), банковские выписки, уставные документы компаний.</li>
+                    <li><strong>Медицинские справки:</strong> выписки из истории болезни, результаты анализов (для визы или эмиграции).</li>
+                </ul>
+
+                <h3>Как происходит процесс заверения?</h3>
+                <p>Процесс максимально прозрачен и занимает минимум вашего времени:</p>
+                <p><strong>1. Проверка:</strong> Вы присылаете мне фотографию или скан документа. Я проверяю его на наличие всех необходимых печатей и подписей, а также оцениваю объем работы.</p>
+                <p><strong>2. Перевод:</strong> Я выполняю точный письменный перевод, сохраняя структуру документа и расположение реквизитов.</p>
+                <p><strong>3. Заверение:</strong> Готовый перевод сшивается с копией оригинала. Нотариус проверяет мою компетенцию и ставит свою печать, подтверждая юридическую силу документа.</p>
+
+                <h3>Особенности перевода с английского и немецкого</h3>
+                <p>Английский язык — самый востребованный, так как требуется для виз в США, Великобританию, Канаду и Австралию. Немецкий язык часто нужен для воссоединения семьи, учебы или работы в Германии и Австрии. В обоих случаях я гарантирую точность формулировок, соответствующих требованиям официальных органов этих стран.</p>
+
+                <h3>Срочный перевод: как это работает?</h3>
+                <p>Если у вас «горит» виза или срочный запрос из посольства, я предлагаю услугу срочного перевода. В большинстве случаев стандартный документ (например, паспорт или диплом) можно перевести и заверить у нотариуса <strong>в течение 1–2 часов</strong>. Для сложных текстов (например, медицинских выписок или уставов) срок может составить до 24 часов.</p>
             </div>
 
             <div class="faq-section">
@@ -429,7 +458,7 @@
                 </p>
             </div>
             
-            <!-- ПОДВАЛ -->
+            <!-- ПОДВАЛ С РЕКВИЗИТАМИ -->
             <div style="margin-top: 40px; font-size: 12px; color: #888; text-align: center; border-top: 1px solid #ddd; padding-top: 20px;">
                 <p><strong>Самозанятая Юлия</strong> | ИНН: 780000000000 <!-- Замените на свой реальный ИНН --></p>
                 <p style="margin-top: 5px;">© 2026 Нотариальный перевод документов в СПб. Все права защищены.</p>
