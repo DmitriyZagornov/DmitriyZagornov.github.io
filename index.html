@@ -6,7 +6,7 @@
     <title>Бюро переводов Юлии — Нотариальный перевод в СПб</title>
     <meta name="description" content="Профессиональный нотариальный перевод документов в Санкт-Петербурге от Юлии. Английский, немецкий, китайский. Быстро, качественно, с гарантией.">
     
-    <!-- Пиксели (оставил ваши) -->
+    <!-- Счетчики -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113791724', 'ym');ym(113791724, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
     </script>
@@ -15,10 +15,9 @@
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-H9J3KMZ1WB');</script>
 
     <style>
-        /* Базовые стили */
         :root { --primary: #006b5b; --accent: #b30000; --bg: #f4f7f6; --text: #333; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 70px; }
         a { text-decoration: none; color: var(--primary); }
         
         /* Шапка */
@@ -41,12 +40,23 @@
         .author-text h3 { font-size: 16px; color: var(--accent); }
         .author-text p { font-size: 13px; color: #777; }
 
-        /* Кнопки */
-        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; border-radius: 8px; font-weight: bold; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
-        .btn-wa { background: #25D366; color: #fff; }
-        .btn-call { background: var(--primary); color: #fff; }
+        /* Сетка контактов */
+        .contacts-section { padding: 40px 20px; max-width: 800px; margin: 0 auto; text-align: center; }
+        .contacts-section h2 { color: var(--primary); font-size: 26px; margin-bottom: 10px; }
+        .contacts-section p { color: #666; margin-bottom: 25px; }
+        .contacts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        
+        .contact-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 20px; border-radius: 10px; color: #fff; font-weight: bold; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .contact-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+        .contact-btn .icon { font-size: 20px; }
+        
+        /* Цвета кнопок */
+        .tg { background: #0088cc; }
+        .wa { background: #25D366; }
+        .inst { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .max { background: #5b50e5; }
+        .ya { background: #fc3f1d; }
+        .call { background: var(--primary); }
 
         /* Сетка услуг */
         .services { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
@@ -61,32 +71,19 @@
         .service-link::after { content: " →"; transition: margin-left 0.2s; }
         .service-card:hover .service-link::after { margin-left: 5px; }
 
-        /* Преимущества и подвал */
-        .features { background: #fff; padding: 40px 20px; text-align: center; }
-        .features-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
-        .feature { font-size: 16px; font-weight: bold; color: var(--primary); }
-        
+        /* Подвал */
         footer { background: #111; color: #aaa; padding: 40px 20px; text-align: center; font-size: 13px; }
         footer a { color: #fff; }
 
-        /* Анимация появления */
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* Кнопка наверх */
-        #toTop { position: fixed; bottom: 80px; right: 20px; background: var(--primary); color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; display: none; z-index: 99; }
-
         /* Мобильная панель */
         .mobile-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); padding: 10px; gap: 10px; z-index: 100; }
-        .mobile-bar a { flex: 1; text-align: center; padding: 12px; border-radius: 6px; color: #fff; font-weight: bold; }
+        .mobile-bar a { flex: 1; text-align: center; padding: 12px; border-radius: 6px; color: #fff; font-weight: bold; font-size: 15px; }
+        .mobile-bar .m-tg { background: #0088cc; }
         .mobile-bar .m-call { background: var(--primary); }
-        .mobile-bar .m-wa { background: #25D366; }
 
         @media (max-width: 600px) {
             .hero h1 { font-size: 26px; }
             .mobile-bar { display: flex; }
-            body { padding-bottom: 60px; }
-            .btn-group { flex-direction: column; }
         }
     </style>
 </head>
@@ -98,62 +95,77 @@
     </header>
 
     <section class="hero">
-        <div class="author-card reveal">
+        <div class="author-card">
             <div class="author-img"></div>
             <div class="author-text">
                 <h3>Юлия</h3>
                 <p>Самозанятая • Переводчик в СПб</p>
             </div>
         </div>
-        <h1 class="reveal">Нотариальный перевод документов</h1>
-        <p class="reveal">Английский, немецкий и другие языки. Быстрое заверение у нотариуса. Принимаю фото документов онлайн.</p>
-        
-        <div class="btn-group reveal">
-            <a href="https://wa.me/79507284034" class="btn btn-wa">Отправить фото в WhatsApp</a>
-            <a href="tel:+79507284034" class="btn btn-call">📞 Позвонить</a>
+        <h1>Нотариальный перевод документов</h1>
+        <p>Английский, немецкий и другие языки. Быстрое заверение у нотариуса. Принимаю фото документов онлайн.</p>
+    </section>
+
+    <!-- Блок со всеми контактами -->
+    <section class="contacts-section" id="contacts">
+        <h2>Связаться со мной</h2>
+        <p>Выберите удобный мессенджер. Отвечаю быстро!</p>
+        <div class="contacts-grid">
+            <a href="https://t.me/jd190799" target="_blank" class="contact-btn tg">
+                <span class="icon">✈️</span> Telegram
+            </a>
+            <a href="https://wa.me/79507284034" target="_blank" class="contact-btn wa">
+                <span class="icon">💬</span> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/yuliussass/" target="_blank" class="contact-btn inst">
+                <span class="icon">📸</span> Instagram
+            </a>
+            <a href="#" target="_blank" class="contact-btn max">
+                <span class="icon">M</span> Макс
+            </a>
+            <a href="https://yandex.ru/chat/p/264d09a5-c69f-460f-9bf8-24031500887a" target="_blank" class="contact-btn ya">
+                <span class="icon">Я</span> Яндекс
+            </a>
+            <a href="tel:+79507284034" class="contact-btn call">
+                <span class="icon">📞</span> Позвонить
+            </a>
         </div>
     </section>
 
     <section class="services">
-        <h2 class="reveal">Выберите тип перевода</h2>
+        <h2>Выберите тип перевода</h2>
         <div class="grid">
-            <!-- Карточки ведут на отдельные страницы (файлы создадим ниже) -->
-            <a href="personal.html" class="service-card reveal">
+            <a href="personal.html" class="service-card">
                 <h3>Личные документы</h3>
                 <p>Паспорт, свидетельство о рождении, о браке, водительское удостоверение.</p>
                 <div class="price">от 300 ₽</div>
                 <span class="service-link">Подробнее</span>
             </a>
-
-            <a href="legal.html" class="service-card reveal">
+            <a href="legal.html" class="service-card">
                 <h3>Юридический перевод</h3>
                 <p>Уставы, договоры, доверенности, судебные решения.</p>
                 <div class="price">от 400 ₽</div>
                 <span class="service-link">Подробнее</span>
             </a>
-
-            <a href="medical.html" class="service-card reveal">
+            <a href="medical.html" class="service-card">
                 <h3>Медицинский перевод</h3>
                 <p>Выписки, справки, результаты анализов для визы или эмиграции.</p>
                 <div class="price">от 500 ₽</div>
                 <span class="service-link">Подробнее</span>
             </a>
-
-            <a href="technical.html" class="service-card reveal">
+            <a href="technical.html" class="service-card">
                 <h3>Технический перевод</h3>
                 <p>Инструкции, чертежи, спецификации и техническая документация.</p>
                 <div class="price">от 500 ₽</div>
                 <span class="service-link">Подробнее</span>
             </a>
-
-            <a href="pasport.html" class="service-card reveal">
+            <a href="pasport.html" class="service-card">
                 <h3>Паспорт / Права</h3>
                 <p>Срочный перевод и заверение паспорта и водительских прав.</p>
                 <div class="price">от 300 ₽</div>
                 <span class="service-link">Подробнее</span>
             </a>
-
-            <a href="diplom.html" class="service-card reveal">
+            <a href="diplom.html" class="service-card">
                 <h3>Диплом</h3>
                 <p>Перевод диплома с приложением оценок для учебы или работы.</p>
                 <div class="price">от 400 ₽</div>
@@ -162,56 +174,15 @@
         </div>
     </section>
 
-    <section class="features">
-        <div class="features-grid">
-            <div class="feature">🛡️ Нотариус в штате</div>
-            <div class="feature">⚡ Срочный перевод</div>
-            <div class="feature">🔒 Полная конфиденциальность</div>
-        </div>
-    </section>
-
     <footer>
         <p><strong>Самозанятая Юлия</strong> | ИНН: 780000000000</p>
         <p>© 2026 Перевод документов в СПб.</p>
-        <p style="margin-top:10px;">
-            <a href="https://t.me/jd190799" target="_blank">Telegram</a> | 
-            <a href="https://www.instagram.com/yuliussass/" target="_blank">Instagram</a> | 
-            <a href="https://yandex.ru/chat/p/264d09a5-c69f-460f-9bf8-24031500887a" target="_blank">Яндекс</a>
-        </p>
     </footer>
 
-    <button id="toTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
-
     <div class="mobile-bar">
+        <a href="https://t.me/jd190799" class="m-tg">✈️ Telegram</a>
         <a href="tel:+79507284034" class="m-call">📞 Позвонить</a>
-        <a href="https://wa.me/79507284034" class="m-wa">WhatsApp</a>
     </div>
 
-    <script>
-        // Анимация появления при скролле
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Запуск при загрузке
-
-        // Кнопка наверх
-        window.onscroll = function() {
-            var btn = document.getElementById("toTop");
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-            }
-        };
-    </script>
 </body>
 </html>
