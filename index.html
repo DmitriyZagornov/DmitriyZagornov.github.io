@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бюро переводов Юлии — Нотариальный перевод в СПб</title>
-    <meta name="description" content="Профессиональный нотариальный перевод документов в Санкт-Петербурге от Юлии. Английский, немецкий, китайский. Быстро, качественно, с гарантией.">
+    <title>Перевод документов в СПб — Юлия | Английский и Немецкий</title>
+    <meta name="description" content="Профессиональный перевод документов с английского и немецкого языков в Санкт-Петербурге. Нотариальное заверение, срочно, по фото.">
     
     <!-- Счетчики -->
     <script type="text/javascript">
@@ -15,162 +15,232 @@
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-H9J3KMZ1WB');</script>
 
     <style>
-        :root { --primary: #006b5b; --accent: #b30000; --bg: #f4f7f6; --text: #333; }
+        /* Базовые настройки */
+        :root {
+            --brand-red: #b30000;
+            --dark: #111;
+            --text: #333;
+            --light-bg: #fafafa;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 70px; }
-        a { text-decoration: none; color: var(--primary); }
-        
+        body { font-family: var(--font-main); background-color: var(--light-bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+
         /* Шапка */
-        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 20px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
-        .logo span { color: var(--accent); }
-        .status-badge { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: bold; background: #e6f7f4; color: var(--primary); padding: 5px 12px; border-radius: 20px; }
-        .pulse-dot { width: 8px; height: 8px; background: #00cc00; border-radius: 50%; box-shadow: 0 0 0 0 rgba(0, 204, 0, 0.7); animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 204, 0, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(0, 204, 0, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 204, 0, 0); } }
+        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 100; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        .logo { font-weight: 900; font-size: 22px; letter-spacing: 1px; color: var(--dark); }
+        .logo span { color: var(--brand-red); }
+        .header-contacts { display: flex; gap: 15px; align-items: center; }
+        .header-phone { font-weight: bold; color: var(--dark); font-size: 16px; }
 
-        /* Главный экран */
-        .hero { padding: 60px 20px; text-align: center; background: linear-gradient(180deg, #fff 0%, var(--bg) 100%); }
-        .hero h1 { font-size: 36px; color: var(--primary); margin-bottom: 15px; font-weight: 900; }
-        .hero p { font-size: 18px; color: #555; max-width: 600px; margin: 0 auto 30px; }
+        /* Главный экран (Hero) */
+        .hero { padding: 140px 20px 80px; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+        .hero-text { flex: 1; max-width: 600px; }
+        .hero-badge { display: inline-block; background: rgba(179, 0, 0, 0.1); color: var(--brand-red); padding: 8px 16px; border-radius: 30px; font-weight: bold; font-size: 14px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero h1 { font-size: 52px; font-weight: 900; color: var(--dark); line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--brand-red); }
+        .hero-desc { font-size: 18px; color: #555; margin-bottom: 35px; }
+        .hero-features { display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
+        .hero-feature { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; }
+        .hero-feature::before { content: "✅"; font-size: 18px; }
         
-        /* Блок автора */
-        .author-card { display: inline-flex; align-items: center; gap: 15px; background: #fff; padding: 10px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid #eee; }
-        .author-img { width: 50px; height: 50px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80') center/cover; }
-        .author-text { text-align: left; }
-        .author-text h3 { font-size: 16px; color: var(--accent); }
-        .author-text p { font-size: 13px; color: #777; }
+        /* Блок автора (Юлия) */
+        .author-box { display: flex; align-items: center; gap: 15px; background: #fff; padding: 15px 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px; width: fit-content; }
+        .author-avatar { width: 60px; height: 60px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80') center/cover; border: 2px solid var(--brand-red); }
+        .author-info h3 { font-size: 18px; color: var(--dark); margin-bottom: 2px; }
+        .author-info p { font-size: 14px; color: #777; }
 
-        /* Сетка контактов */
-        .contacts-section { padding: 40px 20px; max-width: 800px; margin: 0 auto; text-align: center; }
-        .contacts-section h2 { color: var(--primary); font-size: 26px; margin-bottom: 10px; }
-        .contacts-section p { color: #666; margin-bottom: 25px; }
-        .contacts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        
-        .contact-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 20px; border-radius: 10px; color: #fff; font-weight: bold; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .contact-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
-        .contact-btn .icon { font-size: 20px; }
-        
-        /* Цвета кнопок */
-        .tg { background: #0088cc; }
-        .wa { background: #25D366; }
-        .inst { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .max { background: #5b50e5; }
-        .ya { background: #fc3f1d; }
-        .call { background: var(--primary); }
+        /* Кнопки */
+        .btn { display: inline-block; padding: 16px 32px; border-radius: 8px; font-weight: bold; font-size: 16px; transition: all 0.3s; cursor: pointer; text-align: center; }
+        .btn-primary { background: var(--brand-red); color: #fff; box-shadow: 0 8px 20px rgba(179, 0, 0, 0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(179, 0, 0, 0.4); }
+        .btn-outline { background: transparent; color: var(--dark); border: 2px solid var(--dark); margin-left: 15px; }
+        .btn-outline:hover { background: var(--dark); color: #fff; }
 
-        /* Сетка услуг */
-        .services { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
-        .services h2 { text-align: center; color: var(--primary); font-size: 28px; margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .service-card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s, border-color 0.3s; border: 2px solid transparent; display: flex; flex-direction: column; align-items: flex-start; }
-        .service-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .service-card h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
-        .service-card p { color: #666; font-size: 14px; margin-bottom: 20px; flex-grow: 1; }
-        .service-card .price { font-weight: bold; color: var(--primary); margin-bottom: 15px; }
-        .service-link { color: var(--primary); font-weight: bold; display: inline-block; }
-        .service-link::after { content: " →"; transition: margin-left 0.2s; }
-        .service-card:hover .service-link::after { margin-left: 5px; }
+        /* Фото на главном экране */
+        .hero-image { flex: 1; position: relative; }
+        .hero-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); object-fit: cover; height: 500px; }
+
+        /* Блок контактов */
+        .contacts { background: var(--dark); padding: 80px 20px; text-align: center; color: #fff; }
+        .contacts h2 { font-size: 36px; margin-bottom: 15px; }
+        .contacts p { color: #aaa; margin-bottom: 40px; font-size: 18px; }
+        .contacts-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+        .contact-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 130px; height: 130px; background: #222; border-radius: 20px; transition: transform 0.3s, background 0.3s; border: 1px solid #333; }
+        .contact-btn:hover { transform: translateY(-5px); background: #2a2a2a; border-color: var(--brand-red); }
+        .contact-icon { font-size: 32px; margin-bottom: 10px; }
+        .contact-name { font-weight: bold; font-size: 14px; }
+        
+        /* Услуги */
+        .services { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 40px; color: var(--dark); margin-bottom: 15px; font-weight: 900; }
+        .section-title p { color: #666; font-size: 18px; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-card { background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; border-top: 4px solid transparent; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); border-top-color: var(--brand-red); }
+        .service-icon { font-size: 40px; margin-bottom: 20px; }
+        .service-card h3 { font-size: 22px; color: var(--dark); margin-bottom: 15px; }
+        .service-card p { color: #666; margin-bottom: 25px; flex-grow: 1; }
+        .service-price { font-weight: 900; font-size: 20px; color: var(--brand-red); margin-bottom: 20px; }
+        .service-link { font-weight: bold; color: var(--dark); display: inline-flex; align-items: center; gap: 5px; transition: gap 0.3s; }
+        .service-card:hover .service-link { gap: 10px; color: var(--brand-red); }
+
+        /* Отзыв (как в инсте) */
+        .review-section { background: #fff; padding: 80px 20px; text-align: center; }
+        .review-box { max-width: 600px; margin: 0 auto; background: #1a1a1a; color: #fff; padding: 30px; border-radius: 15px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.2); position: relative; }
+        .review-box::before { content: "★★★★★"; color: #ffb400; font-size: 20px; display: block; margin-bottom: 15px; }
+        .review-text { font-size: 16px; line-height: 1.6; margin-bottom: 20px; color: #eee; }
+        .review-author { display: flex; align-items: center; gap: 10px; font-weight: bold; color: #aaa; font-size: 14px; }
 
         /* Подвал */
-        footer { background: #111; color: #aaa; padding: 40px 20px; text-align: center; font-size: 13px; }
-        footer a { color: #fff; }
+        footer { background: #000; color: #666; padding: 40px 20px; text-align: center; font-size: 13px; }
 
-        /* Мобильная панель */
-        .mobile-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); padding: 10px; gap: 10px; z-index: 100; }
-        .mobile-bar a { flex: 1; text-align: center; padding: 12px; border-radius: 6px; color: #fff; font-weight: bold; font-size: 15px; }
-        .mobile-bar .m-tg { background: #0088cc; }
-        .mobile-bar .m-call { background: var(--primary); }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 26px; }
-            .mobile-bar { display: flex; }
+        /* Адаптив */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; padding-top: 100px; text-align: center; }
+            .hero-text { margin: 0 auto; }
+            .hero-features { justify-content: center; }
+            .hero-image { display: none; } /* Скрываем фото на телефоне, чтобы не мешало */
+            .hero h1 { font-size: 36px; }
+            .header-phone { display: none; }
+            .author-box { margin: 0 auto 30px; }
+            .btn-outline { margin-left: 0; margin-top: 15px; display: block; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Шапка -->
     <header>
-        <div class="logo">Перевод<span>Юлия</span></div>
-        <div class="status-badge"><div class="pulse-dot"></div> На связи 24/7</div>
+        <div class="logo">ЮЛИЯ<span>.</span>ПЕРЕВОД</div>
+        <div class="header-contacts">
+            <a href="tel:+79507284034" class="header-phone">+7 (950) 728-40-34</a>
+        </div>
     </header>
 
+    <!-- Главный экран -->
     <section class="hero">
-        <div class="author-card">
-            <div class="author-img"></div>
-            <div class="author-text">
-                <h3>Юлия</h3>
-                <p>Самозанятая • Переводчик в СПб</p>
+        <div class="hero-text">
+            <div class="author-box">
+                <div class="author-avatar"></div>
+                <div class="author-info">
+                    <h3>Юлия</h3>
+                    <p>Самозанятая • Переводчик (СПб)</p>
+                </div>
+            </div>
+            
+            <div class="hero-badge">Немецкий и Английский языки</div>
+            <h1>Перевод <span>документов</span> с нотариальным заверением</h1>
+            <p class="hero-desc">Профессиональный письменный перевод. Юридический, медицинский, технический. Принимаю документы по фото.</p>
+            
+            <div class="hero-features">
+                <div class="hero-feature">качество</div>
+                <div class="hero-feature">скорость</div>
+                <div class="hero-feature">нотариальное заверение</div>
+            </div>
+
+            <div>
+                <a href="#contacts" class="btn btn-primary">Связаться со мной</a>
+                <a href="tel:+79507284034" class="btn btn-outline">Позвонить</a>
             </div>
         </div>
-        <h1>Нотариальный перевод документов</h1>
-        <p>Английский, немецкий и другие языки. Быстрое заверение у нотариуса. Принимаю фото документов онлайн.</p>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead2708?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Перевод документов">
+        </div>
     </section>
 
-    <!-- Блок со всеми контактами -->
-    <section class="contacts-section" id="contacts">
+    <!-- Все контакты -->
+    <section class="contacts" id="contacts">
         <h2>Связаться со мной</h2>
         <p>Выберите удобный мессенджер. Отвечаю быстро!</p>
         <div class="contacts-grid">
-            <a href="https://t.me/jd190799" target="_blank" class="contact-btn tg">
-                <span class="icon">✈️</span> Telegram
+            <a href="https://t.me/jd190799" target="_blank" class="contact-btn">
+                <span class="contact-icon">✈️</span>
+                <span class="contact-name">Telegram</span>
             </a>
-            <a href="https://wa.me/79507284034" target="_blank" class="contact-btn wa">
-                <span class="icon">💬</span> WhatsApp
+            <a href="https://wa.me/79507284034" target="_blank" class="contact-btn">
+                <span class="contact-icon">💬</span>
+                <span class="contact-name">WhatsApp</span>
             </a>
-            <a href="https://www.instagram.com/yuliussass/" target="_blank" class="contact-btn inst">
-                <span class="icon">📸</span> Instagram
+            <a href="https://www.instagram.com/yuliussass/" target="_blank" class="contact-btn">
+                <span class="contact-icon">📸</span>
+                <span class="contact-name">Instagram</span>
             </a>
-            <a href="https://max.ru/u/f9LHodD0cOJc5XFenUvGm9KYIT7HnqPI99_42REfscp0-OQw_tBZWpKt1DM" target="_blank" class="contact-btn max">
-                <span class="icon">M</span> Макс
+            <a href="https://max.ru/u/f9LHodD0cOJc5XFenUvGm9KYIT7HnqPI99_42REfscp0-OQw_tBZWpKt1DM" target="_blank" class="contact-btn">
+                <span class="contact-icon">M</span>
+                <span class="contact-name">Макс</span>
             </a>
-            <a href="https://yandex.ru/chat#/user/264d09a5-c69f-460f-9bf8-24031500887a" target="_blank" class="contact-btn ya">
-                <span class="icon">Я</span> Яндекс
-            </a>
-            <a href="tel:+79507284034" class="contact-btn call">
-                <span class="icon">📞</span> Позвонить
+            <a href="https://yandex.ru/chat#/user/264d09a5-c69f-460f-9bf8-24031500887a" target="_blank" class="contact-btn">
+                <span class="contact-icon">Я</span>
+                <span class="contact-name">Яндекс</span>
             </a>
         </div>
     </section>
 
+    <!-- Услуги -->
     <section class="services">
-        <h2>Выберите тип перевода</h2>
-        <div class="grid">
+        <div class="section-title">
+            <h2>Виды перевода</h2>
+            <p>Выберите нужный раздел для подробностей и цен</p>
+        </div>
+        <div class="services-grid">
             <a href="personal.html" class="service-card">
+                <div class="service-icon">📄</div>
                 <h3>Личные документы</h3>
-                <p>Паспорт, свидетельство о рождении, о браке, водительское удостоверение.</p>
-                <div class="price">от 300 ₽</div>
-                <span class="service-link">Подробнее</span>
+                <p>Перевод паспорта, свидетельства о рождении, браке, водительских прав.</p>
+                <div class="service-price">от 300 ₽</div>
+                <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="legal.html" class="service-card">
+                <div class="service-icon">⚖️</div>
                 <h3>Юридический перевод</h3>
-                <p>Уставы, договоры, доверенности, судебные решения.</p>
-                <div class="price">от 400 ₽</div>
-                <span class="service-link">Подробнее</span>
+                <p>Уставы, договоры, доверенности. Точные юридические формулировки.</p>
+                <div class="service-price">от 400 ₽</div>
+                <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="medical.html" class="service-card">
+                <div class="service-icon">🩺</div>
                 <h3>Медицинский перевод</h3>
-                <p>Выписки, справки, результаты анализов для визы или эмиграции.</p>
-                <div class="price">от 500 ₽</div>
-                <span class="service-link">Подробнее</span>
+                <p>Выписки, справки, анализы. Для визы, эмиграции или лечения.</p>
+                <div class="service-price">от 500 ₽</div>
+                <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="technical.html" class="service-card">
+                <div class="service-icon">⚙️</div>
                 <h3>Технический перевод</h3>
-                <p>Инструкции, чертежи, спецификации и техническая документация.</p>
-                <div class="price">от 500 ₽</div>
-                <span class="service-link">Подробнее</span>
+                <p>Инструкции, чертежи, спецификации. Сохранение форматирования.</p>
+                <div class="service-price">от 500 ₽</div>
+                <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="pasport.html" class="service-card">
+                <div class="service-icon">🪪</div>
                 <h3>Паспорт / Права</h3>
-                <p>Срочный перевод и заверение паспорта и водительских прав.</p>
-                <div class="price">от 300 ₽</div>
-                <span class="service-link">Подробнее</span>
+                <p>Быстрый перевод документов для водителей и путешественников.</p>
+                <div class="service-price">от 300 ₽</div>
+                <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="diplom.html" class="service-card">
+                <div class="service-icon">🎓</div>
                 <h3>Диплом</h3>
-                <p>Перевод диплома с приложением оценок для учебы или работы.</p>
-                <div class="price">от 400 ₽</div>
-                <span class="service-link">Подробнее</span>
+                <p>Перевод диплома и приложения с оценками для учебы или работы.</p>
+                <div class="service-price">от 400 ₽</div>
+                <span class="service-link">Подробнее &rarr;</span>
             </a>
+        </div>
+    </section>
+
+    <!-- Отзыв -->
+    <section class="review-section">
+        <div class="review-box">
+            <div class="review-text">
+                Перевод выполнен качественно! Взялась за большой объем в короткие сроки. Цена по сравнению с конкурентами очень приятная. Если нужна работа, сделали качественно и в срок.
+            </div>
+            <div class="review-author">
+                <span style="font-size: 20px;">👤</span> Александра (Авито)
+            </div>
         </div>
     </section>
 
@@ -178,11 +248,6 @@
         <p><strong>Самозанятая Юлия</strong> | ИНН: 780000000000</p>
         <p>© 2026 Перевод документов в СПб.</p>
     </footer>
-
-    <div class="mobile-bar">
-        <a href="https://t.me/jd190799" class="m-tg">✈️ Telegram</a>
-        <a href="tel:+79507284034" class="m-call">📞 Позвонить</a>
-    </div>
 
 </body>
 </html>
