@@ -15,7 +15,6 @@
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-H9J3KMZ1WB');</script>
 
     <style>
-        /* Базовые настройки */
         :root {
             --brand-red: #b30000;
             --dark: #111;
@@ -31,34 +30,26 @@
         header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 100; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
         .logo { font-weight: 900; font-size: 22px; letter-spacing: 1px; color: var(--dark); }
         .logo span { color: var(--brand-red); }
-        .header-contacts { display: flex; gap: 15px; align-items: center; }
         .header-phone { font-weight: bold; color: var(--dark); font-size: 16px; }
 
-        /* Главный экран (Hero) */
-        .hero { padding: 140px 20px 80px; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+        /* Главный экран */
+        .hero { padding: 140px 20px 60px; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 50px; }
         .hero-text { flex: 1; max-width: 600px; }
         .hero-badge { display: inline-block; background: rgba(179, 0, 0, 0.1); color: var(--brand-red); padding: 8px 16px; border-radius: 30px; font-weight: bold; font-size: 14px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
         .hero h1 { font-size: 52px; font-weight: 900; color: var(--dark); line-height: 1.1; margin-bottom: 20px; }
         .hero h1 span { color: var(--brand-red); }
         .hero-desc { font-size: 18px; color: #555; margin-bottom: 35px; }
-        .hero-features { display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
-        .hero-feature { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; }
-        .hero-feature::before { content: "✅"; font-size: 18px; }
         
-        /* Блок автора (Юлия) */
+        /* Блок автора */
         .author-box { display: flex; align-items: center; gap: 15px; background: #fff; padding: 15px 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px; width: fit-content; }
         .author-avatar { width: 60px; height: 60px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80') center/cover; border: 2px solid var(--brand-red); }
         .author-info h3 { font-size: 18px; color: var(--dark); margin-bottom: 2px; }
         .author-info p { font-size: 14px; color: #777; }
-
-        /* Кнопки */
+        
         .btn { display: inline-block; padding: 16px 32px; border-radius: 8px; font-weight: bold; font-size: 16px; transition: all 0.3s; cursor: pointer; text-align: center; }
         .btn-primary { background: var(--brand-red); color: #fff; box-shadow: 0 8px 20px rgba(179, 0, 0, 0.3); }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(179, 0, 0, 0.4); }
-        .btn-outline { background: transparent; color: var(--dark); border: 2px solid var(--dark); margin-left: 15px; }
-        .btn-outline:hover { background: var(--dark); color: #fff; }
 
-        /* Фото на главном экране */
         .hero-image { flex: 1; position: relative; }
         .hero-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); object-fit: cover; height: 500px; }
 
@@ -71,57 +62,60 @@
         .contact-btn:hover { transform: translateY(-5px); background: #2a2a2a; border-color: var(--brand-red); }
         .contact-icon { font-size: 32px; margin-bottom: 10px; }
         .contact-name { font-weight: bold; font-size: 14px; }
-        
+
         /* Услуги */
-        .services { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+        .services { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-size: 40px; color: var(--dark); margin-bottom: 15px; font-weight: 900; }
-        .section-title p { color: #666; font-size: 18px; }
-        
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .service-card { background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; border-top: 4px solid transparent; }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); border-top-color: var(--brand-red); }
         .service-icon { font-size: 40px; margin-bottom: 20px; }
         .service-card h3 { font-size: 22px; color: var(--dark); margin-bottom: 15px; }
         .service-card p { color: #666; margin-bottom: 25px; flex-grow: 1; }
-        .service-price { font-weight: 900; font-size: 20px; color: var(--brand-red); margin-bottom: 20px; }
         .service-link { font-weight: bold; color: var(--dark); display: inline-flex; align-items: center; gap: 5px; transition: gap 0.3s; }
         .service-card:hover .service-link { gap: 10px; color: var(--brand-red); }
 
-        /* Отзыв (как в инсте) */
-        .review-section { background: #fff; padding: 80px 20px; text-align: center; }
-        .review-box { max-width: 600px; margin: 0 auto; background: #1a1a1a; color: #fff; padding: 30px; border-radius: 15px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.2); position: relative; }
-        .review-box::before { content: "★★★★★"; color: #ffb400; font-size: 20px; display: block; margin-bottom: 15px; }
-        .review-text { font-size: 16px; line-height: 1.6; margin-bottom: 20px; color: #eee; }
+        /* Таблица цен */
+        .price-section { background: #fff; padding: 80px 20px; }
+        .price-container { max-width: 1000px; margin: 0 auto; }
+        .price-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .price-table th { background: #f4f4f4; padding: 20px; text-align: left; font-size: 16px; color: var(--dark); border-bottom: 2px solid #ddd; }
+        .price-table td { padding: 20px; border-bottom: 1px solid #eee; font-size: 15px; vertical-align: top; }
+        .price-table td:first-child { font-weight: bold; color: var(--dark); }
+        .price-table td:first-child span { display: block; font-weight: normal; color: #777; font-size: 13px; margin-top: 5px; }
+        .price-notes { background: #f9f9f9; padding: 25px; border-radius: 10px; font-size: 15px; color: #444; border-left: 4px solid var(--brand-red); }
+        .price-notes p { margin-bottom: 10px; }
+        .price-notes p:last-child { margin-bottom: 0; }
+        .disclaimer { font-size: 13px; color: #888; font-style: italic; margin-top: 20px; text-align: justify; line-height: 1.5; }
+
+        /* Отзыв */
+        .review-section { background: var(--dark); padding: 80px 20px; text-align: center; }
+        .review-box { max-width: 600px; margin: 0 auto; background: #1a1a1a; color: #fff; padding: 40px; border-radius: 15px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .review-box::before { content: "★★★★★"; color: #ffb400; font-size: 20px; display: block; margin-bottom: 20px; }
+        .review-text { font-size: 16px; line-height: 1.6; margin-bottom: 25px; color: #eee; font-style: italic; }
         .review-author { display: flex; align-items: center; gap: 10px; font-weight: bold; color: #aaa; font-size: 14px; }
 
         /* Подвал */
         footer { background: #000; color: #666; padding: 40px 20px; text-align: center; font-size: 13px; }
 
-        /* Адаптив */
         @media (max-width: 900px) {
             .hero { flex-direction: column; padding-top: 100px; text-align: center; }
             .hero-text { margin: 0 auto; }
-            .hero-features { justify-content: center; }
-            .hero-image { display: none; } /* Скрываем фото на телефоне, чтобы не мешало */
+            .hero-image { display: none; }
             .hero h1 { font-size: 36px; }
-            .header-phone { display: none; }
             .author-box { margin: 0 auto 30px; }
-            .btn-outline { margin-left: 0; margin-top: 15px; display: block; }
+            .price-table th, .price-table td { padding: 12px; font-size: 14px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Шапка -->
     <header>
         <div class="logo">ЮЛИЯ<span>.</span>ПЕРЕВОД</div>
-        <div class="header-contacts">
-            <a href="tel:+79507284034" class="header-phone">+7 (950) 728-40-34</a>
-        </div>
+        <a href="tel:+79507284034" class="header-phone">+7 (950) 728-40-34</a>
     </header>
 
-    <!-- Главный экран -->
     <section class="hero">
         <div class="hero-text">
             <div class="author-box">
@@ -133,19 +127,10 @@
             </div>
             
             <div class="hero-badge">Немецкий и Английский языки</div>
-            <h1>Перевод <span>документов</span> с нотариальным заверением</h1>
-            <p class="hero-desc">Профессиональный письменный перевод. Юридический, медицинский, технический. Принимаю документы по фото.</p>
-            
-            <div class="hero-features">
-                <div class="hero-feature">качество</div>
-                <div class="hero-feature">скорость</div>
-                <div class="hero-feature">нотариальное заверение</div>
-            </div>
+            <h1>Перевод <span>документов</span> с заверением нотариуса</h1>
+            <p class="hero-desc">Письменный перевод, юридический, медицинский, технический. Принимаю документы по фото.</p>
 
-            <div>
-                <a href="#contacts" class="btn btn-primary">Связаться со мной</a>
-                <a href="tel:+79507284034" class="btn btn-outline">Позвонить</a>
-            </div>
+            <a href="#contacts" class="btn btn-primary">Заказать перевод</a>
         </div>
         <div class="hero-image">
             <img src="https://images.unsplash.com/photo-1455390582262-044cdead2708?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Перевод документов">
@@ -157,24 +142,25 @@
         <h2>Связаться со мной</h2>
         <p>Выберите удобный мессенджер. Отвечаю быстро!</p>
         <div class="contacts-grid">
-            <a href="https://t.me/jd190799" target="_blank" class="contact-btn">
-                <span class="contact-icon">✈️</span>
-                <span class="contact-name">Telegram</span>
+            <!-- МАКС ТЕПЕРЬ ПЕРВЫЙ -->
+            <a href="https://max.ru/u/f9LHodD0cOJc5XFenUvGm9KYIT7HnqPI99_42REfscp0-OQw_tBZWpKt1DM" target="_blank" class="contact-btn">
+                <span class="contact-icon">🟣</span>
+                <span class="contact-name">Макс</span>
             </a>
             <a href="https://wa.me/79507284034" target="_blank" class="contact-btn">
                 <span class="contact-icon">💬</span>
                 <span class="contact-name">WhatsApp</span>
             </a>
+            <a href="https://t.me/jd190799" target="_blank" class="contact-btn">
+                <span class="contact-icon">✈️</span>
+                <span class="contact-name">Telegram</span>
+            </a>
             <a href="https://www.instagram.com/yuliussass/" target="_blank" class="contact-btn">
                 <span class="contact-icon">📸</span>
                 <span class="contact-name">Instagram</span>
             </a>
-            <a href="https://max.ru/u/f9LHodD0cOJc5XFenUvGm9KYIT7HnqPI99_42REfscp0-OQw_tBZWpKt1DM" target="_blank" class="contact-btn">
-                <span class="contact-icon">M</span>
-                <span class="contact-name">Макс</span>
-            </a>
             <a href="https://yandex.ru/chat#/user/264d09a5-c69f-460f-9bf8-24031500887a" target="_blank" class="contact-btn">
-                <span class="contact-icon">Я</span>
+                <span class="contact-icon">🟡</span>
                 <span class="contact-name">Яндекс</span>
             </a>
         </div>
@@ -184,51 +170,108 @@
     <section class="services">
         <div class="section-title">
             <h2>Виды перевода</h2>
-            <p>Выберите нужный раздел для подробностей и цен</p>
         </div>
         <div class="services-grid">
             <a href="personal.html" class="service-card">
                 <div class="service-icon">📄</div>
                 <h3>Личные документы</h3>
-                <p>Перевод паспорта, свидетельства о рождении, браке, водительских прав.</p>
-                <div class="service-price">от 300 ₽</div>
+                <p>Паспорт, свидетельство о рождении, браке, водительские права.</p>
                 <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="legal.html" class="service-card">
                 <div class="service-icon">⚖️</div>
-                <h3>Юридический перевод</h3>
-                <p>Уставы, договоры, доверенности. Точные юридические формулировки.</p>
-                <div class="service-price">от 400 ₽</div>
+                <h3>Юридический</h3>
+                <p>Уставы, договоры, доверенности. Точные формулировки.</p>
                 <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="medical.html" class="service-card">
                 <div class="service-icon">🩺</div>
-                <h3>Медицинский перевод</h3>
-                <p>Выписки, справки, анализы. Для визы, эмиграции или лечения.</p>
-                <div class="service-price">от 500 ₽</div>
+                <h3>Медицинский</h3>
+                <p>Выписки, справки, анализы для визы или лечения.</p>
                 <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="technical.html" class="service-card">
                 <div class="service-icon">⚙️</div>
-                <h3>Технический перевод</h3>
-                <p>Инструкции, чертежи, спецификации. Сохранение форматирования.</p>
-                <div class="service-price">от 500 ₽</div>
+                <h3>Технический</h3>
+                <p>Инструкции, чертежи, спецификации.</p>
                 <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="pasport.html" class="service-card">
                 <div class="service-icon">🪪</div>
                 <h3>Паспорт / Права</h3>
-                <p>Быстрый перевод документов для водителей и путешественников.</p>
-                <div class="service-price">от 300 ₽</div>
+                <p>Срочный перевод для путешествий и водителей.</p>
                 <span class="service-link">Подробнее &rarr;</span>
             </a>
             <a href="diplom.html" class="service-card">
                 <div class="service-icon">🎓</div>
                 <h3>Диплом</h3>
-                <p>Перевод диплома и приложения с оценками для учебы или работы.</p>
-                <div class="service-price">от 400 ₽</div>
+                <p>Диплом с приложением оценок для учебы.</p>
                 <span class="service-link">Подробнее &rarr;</span>
             </a>
+        </div>
+    </section>
+
+    <!-- ТАБЛИЦА ЦЕН (как на скриншотах) -->
+    <section class="price-section">
+        <div class="price-container">
+            <div class="section-title">
+                <h2>Стоимость перевода</h2>
+            </div>
+            
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Языковая группа</th>
+                        <th>с иностранного на русский</th>
+                        <th>с русского на иностранный</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>СНГ + Английский <span>белорусский, казахский, киргизский, таджикский, узбекский, туркменский, абхазский, молдавский, украинский</span></td>
+                        <td>от 300 ₽</td>
+                        <td>от 400 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Европа (1 кат.) <span>немецкий, итальянский, испанский, французский, румынский, финский, болгарский, черногорский, сербский</span></td>
+                        <td>от 400 ₽</td>
+                        <td>от 500 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Прибалтика <span>эстонский, латышский, литовский</span></td>
+                        <td>от 500 ₽</td>
+                        <td>от 600 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Закавказье <span>армянский, грузинский, азербайджанский</span></td>
+                        <td>от 600 ₽</td>
+                        <td>от 700 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Европа (2 кат.) <span>польский, чешский, хорватский, словацкий, словенский, турецкий, греческий, португальский, датский, нидерландский, норвежский, венгерский, ирландский, мальтийский, шведский</span></td>
+                        <td>от 700 ₽</td>
+                        <td>от 800 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>АЗИЯ (1 кат.) <span>китайский, арабский</span></td>
+                        <td>от 800 ₽</td>
+                        <td>от 900 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>АЗИЯ (2 кат.) <span>японский, тайский, корейский, вьетнамский, хинди, курдский, иврит</span></td>
+                        <td>от 900 ₽</td>
+                        <td>от 1000 ₽</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="price-notes">
+                <p>✔ <strong>+ 100 ₽</strong> к тарифу за узкоспециализированные тексты, сложность форматирования (графики, рисунки, таблицы)</p>
+                <p>✔ <strong>+ 600 ₽</strong> нотариальное заверение за документ, не за страницу!</p>
+                <p>✔ <strong>Срочный тариф</strong> – стоимость переводческой страницы умножается от x1,5 до x2</p>
+            </div>
+
+            <p class="disclaimer">Данный раздел нашего сайта несёт информационный характер и не является публичной офертой. Предлагаемая информация должна помочь вам сориентироваться в приблизительной стоимости перевода и понять, как происходит ценообразование. Стоимость услуг может отличаться от цен, указанных на сайте.</p>
         </div>
     </section>
 
